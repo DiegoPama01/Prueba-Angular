@@ -48,3 +48,4 @@ src/environments/environment.prod.ts
 
 # Backend files
 .env
+.env.production
