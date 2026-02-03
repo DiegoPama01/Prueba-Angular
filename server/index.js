@@ -1,10 +1,13 @@
 const express = require('express');
 const cors = require('cors');
 const jwt = require('jsonwebtoken');
-require('dotenv').config();
+const dotenv = require('dotenv');
+
+const envPath = process.env.NODE_ENV === 'production' ? '.env.production' : undefined;
+dotenv.config({ path: envPath });
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || process.env.NODE_PORT || 3000;
 const JWT_SECRET = process.env.JWT_SECRET || 'super-secret-key';
 
 app.use(cors());
