@@ -57,3 +57,30 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+## Backend (Express)
+
+This project includes a minimal Express server in the `server/` folder for local backend endpoints.
+
+- Start the server once (production-like):
+
+```bash
+npm run server
+```
+
+- Start the server in development with auto-reload (requires `nodemon`):
+
+```bash
+npm run dev:server
+```
+
+Available endpoints:
+
+- `GET /api/health` — returns `{ status: 'ok' }`.
+- `POST /api/login` — accepts JSON `{ name, email }` and echoes it back.
+
+Install dependencies if needed:
+
+```bash
+npm install
+```

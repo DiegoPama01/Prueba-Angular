@@ -1,0 +1,15 @@
+<mat-toolbar color="primary">
+  <button mat-button [matMenuTriggerFor]="buy">Compra</button>
+  <mat-menu #buy="matMenu">
+    <button mat-menu-item [routerLink]="['/dashboard','projects']">Proyectos</button>
+  </mat-menu>
+
+  <button mat-button [matMenuTriggerFor]="sell">Venta</button>
+  <mat-menu #sell="matMenu">
+    <button mat-menu-item [routerLink]="['/dashboard','statistics']">Estadísticas</button>
+  </mat-menu>
+</mat-toolbar>
+
+<div style="padding:16px">
+  <router-outlet></router-outlet>
+</div>

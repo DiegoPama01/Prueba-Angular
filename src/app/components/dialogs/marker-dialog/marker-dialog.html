@@ -1,0 +1,34 @@
+<mat-dialog-content>
+    @if(type==='create'){
+    <h3>Crear marcador</h3>
+    }
+    @else if(type==='edit'){
+    <h3>Editar marcador</h3>
+    }
+
+    <mat-form-field appearance="fill" style="display:block; margin-top:8px;">
+        <mat-label>Título</mat-label>
+        <input matInput [(ngModel)]="title" name="title" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" style="display:block; margin-top:8px;">
+        <mat-label>Latitud</mat-label>
+        <input matInput type="number" [(ngModel)]="lat" name="lat" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" style="display:block; margin-top:8px;">
+        <mat-label>Longitud</mat-label>
+        <input matInput type="number" [(ngModel)]="lng" name="lng" />
+    </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button (click)="cancel()">Cancelar</button>
+    <button mat-button color="primary" (click)="save()">
+        @if(type==='create'){
+        <span>Crear</span>
+        }
+        @else if (type=='edit') {
+        <span>Guardar</span>
+        }
+    </button>
+</mat-dialog-actions>

@@ -1,0 +1,13 @@
+<form (ngSubmit)="onSubmit()" #f="ngForm" class="login-form">
+	<mat-form-field appearance="fill" style="display:block; margin-bottom:12px;">
+		<mat-label>Nombre</mat-label>
+		<input matInput id="name" name="name" required [(ngModel)]="name" />
+	</mat-form-field>
+
+	<mat-form-field appearance="fill" style="display:block; margin-bottom:12px;">
+		<mat-label>Correo</mat-label>
+		<input matInput id="email" name="email" type="email" required [(ngModel)]="email" />
+	</mat-form-field>
+
+	<button mat-raised-button color="primary" type="submit" [disabled]="f.invalid">Enviar</button>
+</form>
